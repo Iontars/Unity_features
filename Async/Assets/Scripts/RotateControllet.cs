@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class RotateControllet : MonoBehaviour
 {
@@ -24,10 +25,10 @@ public class RotateControllet : MonoBehaviour
     {
         for (int i = 0; i < _usingPrefabs.Length; i++)
         {
-            yield return StartCoroutine(RotatePrefabCo(_usingPrefabs[i],(i + 1)));
+            yield return StartCoroutine(RotatePrefabCo(_usingPrefabs[i], (i + 1)));
         }
     }
-
+    
     private IEnumerator RotatePrefabCo(Transform prefab, float duration)
     {
         float timer = 0f;
