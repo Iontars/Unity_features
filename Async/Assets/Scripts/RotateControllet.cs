@@ -7,13 +7,14 @@ public class RotateControllet : MonoBehaviour
 {
     [SerializeField] private Transform[] _usingPrefabs = default;
     private float _speed = 100f;
-    void Start()
+
+    private void Start()
     {
         
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -23,7 +24,7 @@ public class RotateControllet : MonoBehaviour
 
     private IEnumerator LifeCo()
     {
-        for (int i = 0; i < _usingPrefabs.Length; i++)
+        for (var i = 0; i < _usingPrefabs.Length; i++)
         {
             yield return StartCoroutine(RotatePrefabCo(_usingPrefabs[i], (i + 1)));
         }
